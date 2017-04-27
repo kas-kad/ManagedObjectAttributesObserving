@@ -11,8 +11,8 @@
 		AD0BF31D1EB2572700512B55 /* ManagedObjectAttributesObserving.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AD0BF31B1EB2572700512B55 /* ManagedObjectAttributesObserving.xcdatamodeld */; };
 		AD0BF31F1EB2572700512B55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD0BF31E1EB2572700512B55 /* Assets.xcassets */; };
 		AD0BF32D1EB2572700512B55 /* ManagedObjectAttributesObservingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0BF32C1EB2572700512B55 /* ManagedObjectAttributesObservingTests.swift */; };
-		AD0BF3391EB258C000512B55 /* ManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0BF3381EB258C000512B55 /* ManagedObjectExtension.swift */; };
-		AD0BF33B1EB2592100512B55 /* ManagedObjectNotifictationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0BF33A1EB2592100512B55 /* ManagedObjectNotifictationCenter.swift */; };
+		AD0BF3391EB258C000512B55 /* ManagedObjectNotifictationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0BF3381EB258C000512B55 /* ManagedObjectNotifictationCenter.swift */; };
+		AD0BF33B1EB2592100512B55 /* ManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0BF33A1EB2592100512B55 /* ManagedObjectExtension.swift */; };
 		AD13A5841EB2694C0038A911 /* PersonManagedObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13A5821EB2694C0038A911 /* PersonManagedObject+CoreDataClass.swift */; };
 		AD13A5851EB2694C0038A911 /* PersonManagedObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13A5831EB2694C0038A911 /* PersonManagedObject+CoreDataProperties.swift */; };
 		AD13A5871EB26ADC0038A911 /* MMCoreDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD13A5861EB26ADC0038A911 /* MMCoreDataExtensions.swift */; };
@@ -38,11 +38,11 @@
 		AD0BF3281EB2572700512B55 /* ManagedObjectAttributesObservingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ManagedObjectAttributesObservingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD0BF32C1EB2572700512B55 /* ManagedObjectAttributesObservingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectAttributesObservingTests.swift; sourceTree = "<group>"; };
 		AD0BF32E1EB2572700512B55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AD0BF3381EB258C000512B55 /* ManagedObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManagedObjectExtension.swift; path = KASManagedObjectObserver/ManagedObjectExtension.swift; sourceTree = "<group>"; };
-		AD0BF33A1EB2592100512B55 /* ManagedObjectNotifictationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManagedObjectNotifictationCenter.swift; path = KASManagedObjectObserver/ManagedObjectNotifictationCenter.swift; sourceTree = "<group>"; };
+		AD0BF3381EB258C000512B55 /* ManagedObjectNotifictationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectNotifictationCenter.swift; sourceTree = "<group>"; };
+		AD0BF33A1EB2592100512B55 /* ManagedObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectExtension.swift; sourceTree = "<group>"; };
 		AD13A5821EB2694C0038A911 /* PersonManagedObject+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PersonManagedObject+CoreDataClass.swift"; path = "ManagedObjectAttributesObserving/PersonManagedObject+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AD13A5831EB2694C0038A911 /* PersonManagedObject+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PersonManagedObject+CoreDataProperties.swift"; path = "ManagedObjectAttributesObserving/PersonManagedObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		AD13A5861EB26ADC0038A911 /* MMCoreDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMCoreDataExtensions.swift; sourceTree = "<group>"; };
+		AD13A5861EB26ADC0038A911 /* MMCoreDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MMCoreDataExtensions.swift; path = ManagedObjectAttributesObserving/MMCoreDataExtensions.swift; sourceTree = "<group>"; };
 		AD13A5881EB26F330038A911 /* CoreDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,10 +110,11 @@
 		AD0BF3371EB2588000512B55 /* KASManagedObjectObserver */ = {
 			isa = PBXGroup;
 			children = (
-				AD0BF3381EB258C000512B55 /* ManagedObjectExtension.swift */,
-				AD0BF33A1EB2592100512B55 /* ManagedObjectNotifictationCenter.swift */,
+				AD0BF3381EB258C000512B55 /* ManagedObjectNotifictationCenter.swift */,
+				AD0BF33A1EB2592100512B55 /* ManagedObjectExtension.swift */,
 			);
 			name = KASManagedObjectObserver;
+			path = ../KASManagedObjectObserver;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,8 +220,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD0BF3391EB258C000512B55 /* ManagedObjectExtension.swift in Sources */,
-				AD0BF33B1EB2592100512B55 /* ManagedObjectNotifictationCenter.swift in Sources */,
+				AD0BF3391EB258C000512B55 /* ManagedObjectNotifictationCenter.swift in Sources */,
+				AD0BF33B1EB2592100512B55 /* ManagedObjectExtension.swift in Sources */,
 				AD13A5841EB2694C0038A911 /* PersonManagedObject+CoreDataClass.swift in Sources */,
 				AD0BF31D1EB2572700512B55 /* ManagedObjectAttributesObserving.xcdatamodeld in Sources */,
 				AD0BF3181EB2572700512B55 /* AppDelegate.swift in Sources */,
