@@ -14,33 +14,47 @@ import Foundation
 
 class ManagedObjectAttributesObservingTests: CoreDataTests {
 	
+	override func setUp() {
+		super.setUp()
+		let ctx = persistentContainer.viewContext
+		let msg1 = PersonManagedObject.MM_createEntityInContext(context: ctx)
+		msg1.name = "Ringo"
+		msg1.birthdate = NSDate()
+		
+		let msg2 = PersonManagedObject.MM_createEntityInContext(context: ctx)
+		msg2.name = "George"
+		msg2.birthdate = NSDate()
+		ctx.MM_saveToPersistentStoreAndWait()
+		
+	}
+	
 	func testThatChangeHandlerTriggerred() {
 		weak var expectation1 = expectation(description: "Person 1 observed")
 		weak var expectation2 = expectation(description: "Person 2 observed")
 		
 		let ctx = persistentContainer.viewContext
 		
-		if	let person1 = PersonManagedObject.MM_findAllWithPredicate(NSPredicate(format: "name == %@", "1.1"), context: ctx)!.first,
-			let person2 = PersonManagedObject.MM_findAllWithPredicate(NSPredicate(format: "name == %@", "2.1"), context: ctx)!.first {
+		if	let person1 = PersonManagedObject.MM_findAllWithPredicate(NSPredicate(format: "name == %@", "Ringo"), context: ctx)!.first,
+			let person2 = PersonManagedObject.MM_findAllWithPredicate(NSPredicate(format: "name == %@", "George"), context: ctx)!.first {
 		
 			let observingKeyPath = "name"
-			let person1newId = "1.2"
-			let person2newId = "2.2"
+			let person1newName = "John"
+			let person2newName = "Paul"
 			
 			ManagedObjectNotificationCenter.defaultCenter.addObserver(observer: self, observee: person1, forKeyPath: observingKeyPath, handler: { (keyPath, newValue) in
-				XCTAssertEqual(newValue as? String, person1newId, "The new value must be passed to handler")
+				XCTAssertEqual(newValue as? String, person1newName, "The new value must be passed to handler")
 				XCTAssertEqual(keyPath, observingKeyPath, "The keypath should be that particluar one which we are observing")
 				expectation1?.fulfill()
 			})
 			
 			ManagedObjectNotificationCenter.defaultCenter.addObserver(observer: self, observee: person2, forKeyPath: observingKeyPath, handler: { (keyPath, newValue) in
-				XCTAssertEqual(newValue as? String, person2newId, "The new value must be passed to handler")
+				XCTAssertEqual(newValue as? String, person2newName, "The new value must be passed to handler")
 				XCTAssertEqual(keyPath, observingKeyPath, "The keypath should be that particluar one which we are observing")
 				expectation2?.fulfill()
 			})
 			
-			person1.name = person1newId
-			person2.name = person2newId
+			person1.name = person1newName
+			person2.name = person2newName
 			ctx.MM_saveToPersistentStoreAndWait()
 		}
 		

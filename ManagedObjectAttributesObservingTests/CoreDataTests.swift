@@ -83,20 +83,6 @@ class CoreDataTests: XCTestCase {
 		return .terminateNow
 	}
 	
-	override func setUp() {
-		super.setUp()
-		let ctx = persistentContainer.viewContext
-		let msg1 = PersonManagedObject.MM_createEntityInContext(context: ctx)
-		msg1.name = "1.1"
-		msg1.birthdate = NSDate()
-		
-		let msg2 = PersonManagedObject.MM_createEntityInContext(context: ctx)
-		msg2.name = "2.1"
-		msg2.birthdate = NSDate()
-		ctx.MM_saveToPersistentStoreAndWait()
-		
-	}
-	
 	override func tearDown() {
 		super.tearDown()
 		let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "PersonManagedObject")
