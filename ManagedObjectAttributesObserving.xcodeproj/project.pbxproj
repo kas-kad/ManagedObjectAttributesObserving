@@ -42,7 +42,7 @@
 		AD0BF33A1EB2592100512B55 /* ManagedObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectExtension.swift; sourceTree = "<group>"; };
 		AD13A5821EB2694C0038A911 /* PersonManagedObject+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PersonManagedObject+CoreDataClass.swift"; path = "ManagedObjectAttributesObserving/PersonManagedObject+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AD13A5831EB2694C0038A911 /* PersonManagedObject+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PersonManagedObject+CoreDataProperties.swift"; path = "ManagedObjectAttributesObserving/PersonManagedObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		AD13A5861EB26ADC0038A911 /* MMCoreDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MMCoreDataExtensions.swift; path = ManagedObjectAttributesObserving/MMCoreDataExtensions.swift; sourceTree = "<group>"; };
+		AD13A5861EB26ADC0038A911 /* MMCoreDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMCoreDataExtensions.swift; sourceTree = "<group>"; };
 		AD13A5881EB26F330038A911 /* CoreDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,7 +69,6 @@
 			children = (
 				AD13A5821EB2694C0038A911 /* PersonManagedObject+CoreDataClass.swift */,
 				AD13A5831EB2694C0038A911 /* PersonManagedObject+CoreDataProperties.swift */,
-				AD13A5861EB26ADC0038A911 /* MMCoreDataExtensions.swift */,
 				AD0BF3161EB2572700512B55 /* ManagedObjectAttributesObserving */,
 				AD0BF32B1EB2572700512B55 /* ManagedObjectAttributesObservingTests */,
 				AD0BF3151EB2572700512B55 /* Products */,
@@ -100,6 +99,7 @@
 		AD0BF32B1EB2572700512B55 /* ManagedObjectAttributesObservingTests */ = {
 			isa = PBXGroup;
 			children = (
+				AD13A5861EB26ADC0038A911 /* MMCoreDataExtensions.swift */,
 				AD0BF32C1EB2572700512B55 /* ManagedObjectAttributesObservingTests.swift */,
 				AD0BF32E1EB2572700512B55 /* Info.plist */,
 				AD13A5881EB26F330038A911 /* CoreDataTests.swift */,
