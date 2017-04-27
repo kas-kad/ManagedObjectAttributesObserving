@@ -59,15 +59,14 @@ class ManagedObjectNotificationCenter {
 		
 		self.removeObserver(observer: observer, observee: observee, forKeyPath: keyPath)
 		
-		let newObs = Observation(observer: observer, observee: observee, keyPath: keyPath, handler: handler)
-		newObs.start()
-		newObs.onParticipantDeallocation { observation in
-			self.removeObserver(observationId: observation.uniqueId)
-		}
-		
-//		observersQueue.sync {
+		observersQueue.sync {
+			let newObs = Observation(observer: observer, observee: observee, keyPath: keyPath, handler: handler)
+			newObs.start()
+			newObs.onParticipantDeallocation { observation in
+				self.removeObserver(observationId: observation.uniqueId)
+			}
 			self._observations.insert(newObs)
-//		}
+		}
 	}
 	
 	private func removeObserver(filterBlock: @escaping (Observation) -> Bool) {
